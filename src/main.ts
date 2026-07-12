@@ -2,24 +2,27 @@ import "./style.css";
 
 let turnoActual = 0;
 
-function actualizarPantalla() {
+const actualizarPantalla = () => {
   const textoTurno = turnoActual.toString().padStart(2, "0");
-
   document.getElementById("numero-turno")!.innerHTML = textoTurno;
-}
+};
 
-function sumar() {
+const sumar = () => {
   turnoActual++;
   actualizarPantalla();
-}
-function restar() {
-  turnoActual--;
+};
+
+const restar = () => {
+  if (turnoActual > 0) {
+    turnoActual--;
+  }
   actualizarPantalla();
-}
-function reset() {
+};
+
+const reset = () => {
   turnoActual = 0;
   actualizarPantalla();
-}
+};
 
 const botonSumar = document.getElementById("sumar")!;
 const botonRestar = document.getElementById("restar")!;
