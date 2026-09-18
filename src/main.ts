@@ -37,7 +37,7 @@ const obtenerUrlCarta = (carta: number): string => {
       return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/6_seis-copas.jpg";
 
     case 7:
-      return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/7_siete-copas.jpg"/;
+      return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/7_siete-copas.jpg";
 
     case 10:
       return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/10_sota-copas.jpg";
@@ -49,7 +49,7 @@ const obtenerUrlCarta = (carta: number): string => {
       return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/copas/12_rey-copas.jpg";
 
     default:
-      return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg".;
+      return "https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg";
   }
 };
 
@@ -61,14 +61,16 @@ const muestraCarta = (carta: number): void => {
 
 const obtenerPuntuacionCarta = (carta: number): number => {
   if (carta === 10 || carta === 11 || carta === 12) {
-    return 0.5;}
+    return 0.5;
+  }
 
   return carta;
 };
 
 const pideCarta = () => {
   if (juegoTerminado) {
-    return;}
+    return;
+  }
 
   const carta = dameCarta();
 
@@ -85,8 +87,7 @@ const comprobarGameOver = () => {
   if (puntuacion > 7.5) {
     juegoTerminado = true;
 
-    document.getElementById("mensaje").innerHTML =
-      "Game Over";
+    document.getElementById("mensaje").innerHTML = "Game Over";
 
     document.getElementById("pedir-carta").disabled = true;
 
@@ -98,7 +99,8 @@ const comprobarGameOver = () => {
 
 const mePlanto = () => {
   if (juegoTerminado) {
-    return;}
+    return;
+  }
 
   juegoTerminado = true;
   document.getElementById("pedir-carta").disabled = true;
@@ -110,13 +112,11 @@ const mePlanto = () => {
   if (puntuacion < 4) {
     document.getElementById("mensaje").innerHTML = "Te has quedado lejos";
   } else if (puntuacion === 5) {
-    document.getElementById("mensaje").innerHTML =
-      "Te ha entrado el canguelo eh?";
+    document.getElementById("mensaje").innerHTML = "Uy!";
   } else if (puntuacion === 6 || puntuacion === 7) {
     document.getElementById("mensaje").innerHTML = "Casi";
   } else if (puntuacion === 7.5) {
-    document.getElementById("mensaje").innerHTML =
-      "Enhorabuena!";
+    document.getElementById("mensaje").innerHTML = "Enhorabuena!";
   }
 };
 
@@ -124,7 +124,7 @@ const nuevaPartida = () => {
   puntuacion = 0;
 
   juegoTerminado = false;
-muestraPuntuacion();
+  muestraPuntuacion();
 
   document.getElementById("mensaje").innerHTML = "";
 
@@ -135,7 +135,7 @@ muestraPuntuacion();
 
   document.getElementById("plantarse").disabled = false;
 
-  document.getElementById("nueva-partida").disabled = true;'
+  document.getElementById("nueva-partida").disabled = true;
 };
 
 const botonPedirCarta = document.getElementById("pedir-carta");
@@ -148,4 +148,4 @@ botonPlantarse.addEventListener("click", mePlanto);
 const botonNuevaPartida = document.getElementById("nueva-partida");
 
 botonNuevaPartida.addEventListener("click", nuevaPartida);
-document.addEventListener("DOMContentLoaded", muestraPuntuacion);.
+document.addEventListener("DOMContentLoaded", muestraPuntuacion);
