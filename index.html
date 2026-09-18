@@ -1,22 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link rel="stylesheet" href="./src/style.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+
+    <title>Juego de las 7 y media</title>
+
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
+
   <body>
-    <div class="turno-display">
-      <h1 id="numero-turno">01</h1>
-      <p class="texto-turno">Por favor, acérquese al mostrador</p>
+    <div id="app">
+      <h1>Juego</h1>
+
+      <div class="juego">
+        <div id="puntuacion">Puntuación</div>
+
+        <div class="cartas">
+          <img
+            id="carta"
+            src="https://raw.githubusercontent.com/Lemoncode/fotos-ejemplos/main/cartas/back.jpg"
+          />
+        </div>
+
+        <div id="mensaje"></div>
+
+        <div class="botones">
+          <button id="pedir-carta">Pedir carta</button>
+
+          <button id="plantarse">Plantarse</button>
+
+          <button id="nueva-partida" disabled>Nueva partida</button>
+        </div>
+      </div>
     </div>
-    <div>
-      <button id="sumar">Siguiente</button>
-      <button id="restar">Anterior</button>
-      <button id="reset">Resetear</button>
-    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
